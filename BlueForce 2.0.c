@@ -36,6 +36,7 @@ task main()
 		lift();
 		//Wait so motors can update
 		wait1Msec(20);
+		if (vexRT[Btn8U]) gyroInit();
 	}
 }
 //--------------------------------------------------Functions-------------------------------------------------------
@@ -67,9 +68,9 @@ void updateDrive(){
 		defAngle = SensorValue[in8];
  }
 }
-void shooter(int speed){
-	motor[shooterLeft] = speed;
-	motor[shooterRight] = -speed;
+void shooter(int _speed){
+	motor[shooterLeft] = _speed;
+	motor[shooterRight] = -_speed;
 }
 void intake(){
 	if(vexRT[Btn6U]){
